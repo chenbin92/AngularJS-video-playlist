@@ -1,5 +1,4 @@
-/* Empty. Add your own CSS if you like */
-
+/*example1 stylesheet*/
 video {
   width: 100%;
 }
@@ -18,4 +17,33 @@ button {
 .svg-board {
   display: block;
   margin: 0 auto;
+}
+
+/*example2 stylesheet*/
+.videogular-container {
+  width: 100%;
+  height: 320px;
+  margin: auto;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .videogular-container {
+    width: 1170px;
+    height: 658.125px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .videogular-container {
+    width: 940px;
+    height: 528.75px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .videogular-container {
+    width: 728px;
+    height: 409.5px;
+  }
 }
