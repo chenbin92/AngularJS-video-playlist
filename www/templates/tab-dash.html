@@ -1,17 +1,61 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <h2>Welcome to Ionic</h2>
-    <p>
-    This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
-    </p>
-    <p>
-      To edit the content of each tab, edit the corresponding template file in <code>www/templates/</code>. This template is <code>www/templates/tab-dash.html</code>
-    </p>
-    <p>
-    If you need help with your app, join the Ionic Community on the <a href="http://forum.ionicframework.com" target="_blank">Ionic Forum</a>. Make sure to <a href="http://twitter.com/ionicframework" target="_blank">follow us</a> on Twitter to get important updates and announcements for Ionic developers.
-    </p>
-    <p>
-      For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
-    </p>
+
+    <video id="playerVideo" webkit-playsinline>
+      <source ng-src="./video/oceans.mp4">
+    </video>
+
+    <div id="progressBar" data-pct="">
+      <svg
+          version="1.1"
+          baseProfile="full"
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="200"
+          class="svg-board">
+        <circle
+          cx="100"
+          cy="100"
+          r="50"
+          stroke="#eee"
+          stroke-width="6"
+          fill="none" />
+        <path
+          id="ring"
+          stroke="#ADA0E8"
+          stroke-width="6"
+          fill="none" />
+        <circle
+          cx="100"
+          cy="100"
+          r="47"
+          stroke="#fff"
+          stroke-width="0"
+          fill="#fff" />
+      </svg>
+    </div>
+
+    <div class="row">
+      <p class="col col-50">Video duration </p>
+      <p class="col col-50 text-center" id="videoTotalTime"></p>
+    </div>
+    <div class="row">
+      <p class="col col-50">Current play time </p>
+      <p class="col col-50 text-center" id="timer">0:00</p>
+    </div>
+    <div class="row">
+      <p class="col col-50">Time countdown</p>
+      <p class="col col-50 text-center" id="videoSeconds"></p>
+    </div>
+
+    <div class="row text-center">
+      <div class="col col-50">
+        <button id="volumeButton">Volume</button>
+      </div>
+      <div class="col col-50">
+        <button id="playButton" ng-click="updateProgress()">Play</button>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>
