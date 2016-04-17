@@ -130,24 +130,32 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+// .controller('ChatsCtrl', function($scope) {
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+// })
+
+.controller('ChatsCtrl', ["$sce", function ($sce) {
+  this.config = {
+    sources: [
+      {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"), type: "video/mp4"},
+      {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"), type: "video/webm"},
+      {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"), type: "video/ogg"}
+    ],
+    tracks: [
+      {
+        src: "http://www.videogular.com/assets/subs/pale-blue-dot.vtt",
+        kind: "subtitles",
+        srclang: "en",
+        label: "English",
+        default: ""
+      }
+    ],
+    theme: "http://www.videogular.com/styles/themes/default/latest/videogular.css",
+    plugins: {
+      poster: "http://www.videogular.com/assets/images/videogular.png"
+    }
   };
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
+}])
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
