@@ -1,1 +1,21 @@
 /* Empty. Add your own CSS if you like */
+
+video {
+  width: 100%;
+}
+
+button {
+  width: 100px;
+  height: 36px;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 32px;
+  display: block;
+  background: #ADA0E8;
+  color: #fff;
+  border: none;
+}
+.svg-board {
+  display: block;
+  margin: 0 auto;
+}
