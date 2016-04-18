@@ -51,31 +51,31 @@ angular.module('starter', [
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.example1', {
+    url: '/example1',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
+      'tab-example1': {
+        templateUrl: 'templates/video-example1.html',
         controller: 'DashCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.example2', {
+      url: '/example2',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
+        'tab-example2': {
+          templateUrl: 'templates/video-example2.html',
           controller: 'ChatsCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.example3', {
+    url: '/example3',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
+      'tab-example3': {
+        templateUrl: 'templates/video-example3.html',
         controller: 'AccountCtrl'
       }
     }
