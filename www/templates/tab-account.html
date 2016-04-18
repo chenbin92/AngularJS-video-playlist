@@ -1,9 +1,103 @@
-<ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+<ion-view view-title="example3">
+  <ion-content class="video-example3">
+    <div ng-controller="AccountCtrl as controller">
+      <div class="videogular-container">
+        <videogular
+          vg-player-ready="controller.onPlayerReady($API)"
+          vg-complete="controller.onCompleteVideo()"
+          vg-update-state="controller.onUpdateState($state)"
+          vg-change-source="controller.onChangeSource($source)"
+          vg-theme="controller.config.theme.url">
+          <!-- vg-media: 视频来源 -->
+          <vg-media vg-src="controller.config.sources"
+                    vg-tracks="controller.config.tracks"
+                    id="playerVideo">
+          </vg-media>
+
+          <!-- progress bar  -->
+          <div id="progressBar" data-pct="{{controller.progressCounter}}">
+            <svg
+                version="1.1"
+                baseProfile="full"
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200">
+              <circle
+                cx="100"
+                cy="100"
+                r="50"
+                stroke="#eee"
+                stroke-width="6"
+                fill="none" />
+              <path
+                id="ring"
+                stroke="#ADA0E8"
+                stroke-width="6"
+                fill="none" />
+              <circle
+                cx="100"
+                cy="100"
+                r="47"
+                stroke="#fff"
+                stroke-width="0"
+                fill="#fff" />
+            </svg>
+          </div>
+
+          <!-- vg-controls: 视频控制器 -->
+          <vg-controls>
+            <!-- 视频播放进度条 -->
+            <!--  <vg-scrub-bar>
+                  <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+              </vg-scrub-bar> -->
+
+            <div class="row">
+              <p class="col col-50">Video duration </p>
+              <p class="col col-50 text-center" id="videoTotalTime">
+                <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+              </p>
+            </div>
+            <div class="row">
+              <p class="col col-50">Current play time </p>
+              <p class="col col-50 text-center" id="timer">
+                <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+              </p>
+            </div>
+            <div class="row">
+              <p class="col col-50">Time countdown</p>
+              <p class="col-50 text-center time-countdown">{{ controller.progressCounter }}</p>
+            </div>
+            <!-- <div class="row">
+              <p class="col col-50">Volume</p>
+              <p class="col col-50 text-center">
+                <vg-volume>
+                  <vg-mute-button></vg-mute-button>
+                  <vg-volume-bar></vg-volume-bar>
+                </vg-volume>
+              </p>
+            </div> -->
+
+            <!-- switch playlist -->
+            <div class="row playlist text-center">
+              <div class="col col-33">
+                <button ng-click="controller.prevVideo()"><i class="icon ion-skip-backward"></i></button>
+              </div>
+              <div class="col col-33">
+                  <vg-play-pause-button id="playButton" ng-click="controller.updateProgress()"></vg-play-pause-button>
+              </div>
+              <div class="col col-33">
+                <button ng-click="controller.nexeVideo()"><i class="icon ion-skip-forward"></i></button>
+              </div>
+            </div>
+
+          </vg-controls>
+
+          <!-- 其他插件 -->
+          <!-- <vg-overlay-play></vg-overlay-play>
+          <vg-buffering></vg-buffering>
+          <vg-poster vg-url='controller.config.plugins.poster'></vg-poster> -->
+        </videogular>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
