@@ -3,7 +3,11 @@
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.2.4",
-    "angular": "^1.3.x",
-    "angular-sanitize": "^1.3.x"
+    "angular": "1.4.3",
+    "angular-sanitize": "^1.3.x",
+    "videogular-controls": "~1.4.3",
+    "videogular-buffering": "~1.4.3",
+    "videogular-overlay-play": "~1.4.3",
+    "videogular-poster": "~1.4.3"
   }
 }
