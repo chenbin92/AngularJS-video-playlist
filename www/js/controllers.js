@@ -24,45 +24,46 @@ angular.module('starter.controllers', [])
         $scope.setVideo($scope.currentVideo);
     };
 
-    $scope.onUpdateState = function($state) {
-      $scope.state = $state
-      console.log("state ======= " + $state)
-    }
-
-    $scope.onChangeSource = function($source) {
-      window.videoSource = $source;
-      if($scope.state == "play") {
-        console.log("")
-      }
-      console.log("source ======= " + $source)
-    }
-
-
     // 定义视频列表数据源
     $scope.videos = [
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/video1.mp4"), type: "video/mp4"}
+          {
+            src: $sce.trustAsResourceUrl("./video/video1.mp4"),
+            type: "video/mp4"
+          }
         ]
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/video2.mp4"), type: "video/mp4"}
+          {
+            src: $sce.trustAsResourceUrl("./video/video2.mp4"),
+            type: "video/mp4"
+          }
         ]
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/video3.mp4"), type: "video/mp4"}
+          {
+            src: $sce.trustAsResourceUrl("./video/video3.mp4"),
+            type: "video/mp4"
+          }
         ]
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/video4.mp4"), type: "video/mp4"}
+          {
+            src: $sce.trustAsResourceUrl("./video/video4.mp4"),
+            type: "video/mp4"
+          }
         ]
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/video5.mp4"), type: "video/mp4"}
+          {
+            src: $sce.trustAsResourceUrl("./video/video5.mp4"),
+            type: "video/mp4"
+          }
         ]
       }
     ];
@@ -77,9 +78,9 @@ angular.module('starter.controllers', [])
         theme: {
             // url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"
         },
-        // plugins: {
-        //     poster: "http://www.videogular.com/assets/images/videogular.png"
-        // }
+        plugins: {
+            poster: "http://www.videogular.com/assets/images/videogular.png"
+        }
     };
 
     $scope.setVideoAttr = function() {
@@ -93,8 +94,6 @@ angular.module('starter.controllers', [])
         var seconds = new Date($scope.totalTime).getSeconds();
 
         $scope.progressCounter = minutes * 60 + seconds;
-        console.log(window.videoAPI = $scope.API)
-        console.log($scope.progressCounter + " progress counter");
     }
 
     $timeout(function() {
@@ -122,7 +121,6 @@ angular.module('starter.controllers', [])
         alert("This is the last video");
         return
       }
-      console.log(sourceIndex)
       $scope.setVideo(sourceIndex);
     };
 
@@ -134,7 +132,6 @@ angular.module('starter.controllers', [])
         alert("This is the first video!");
         return
       }
-      console.log(sourceIndex);
       $scope.setVideo(sourceIndex);
     };
 
@@ -178,8 +175,6 @@ angular.module('starter.controllers', [])
       // debugger
       video = document.getElementById('playerVideo').children[0];
       videoDuration = Math.floor(video.duration); // 获取视频长度
-      console.log("video: " + video);
-      console.log("videoDuration: " + videoDuration)
       increaseNumber = 360/videoDuration;
       $scope.progressCounter = videoDuration;
 
@@ -187,7 +182,7 @@ angular.module('starter.controllers', [])
         currentTime = Math.floor(video.currentTime);
         $scope.progressCounter = videoDuration - currentTime;
         radianPerSecond = currentTime * increaseNumber;
-        console.log("实时返回当前的弧度 " + radianPerSecond);
+        console.log("绘制回当前的弧度 " + radianPerSecond);
         if (radianPerSecond == 0) {
           $scope.drawProgress(1)
         } else if(radianPerSecond>0 & radianPerSecond<354) {

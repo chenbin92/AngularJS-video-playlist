@@ -5,8 +5,6 @@
         <videogular
           vg-player-ready="controller.onPlayerReady($API)"
           vg-complete="controller.onCompleteVideo()"
-          vg-update-state="controller.onUpdateState($state)"
-          vg-change-source="controller.onChangeSource($source)"
           vg-theme="controller.config.theme.url">
           <!-- vg-media: 视频来源 -->
           <vg-media vg-src="controller.config.sources"
@@ -95,8 +93,8 @@
 
           <!-- 其他插件 -->
           <!-- <vg-overlay-play></vg-overlay-play>
-          <vg-buffering></vg-buffering>
-          <vg-poster vg-url='controller.config.plugins.poster'></vg-poster> -->
+          <vg-buffering></vg-buffering> -->
+          <!-- <vg-poster vg-url='controller.config.plugins.poster'></vg-poster> -->
         </videogular>
       </div>
     </div>
