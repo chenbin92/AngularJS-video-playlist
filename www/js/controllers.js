@@ -125,21 +125,21 @@ angular.module('starter.controllers', [])
       }
     })
   }
-
-
-
 })
-
-// .controller('ChatsCtrl', function($scope) {
-
-// })
 
 .controller('ChatsCtrl', ["$sce", function ($sce) {
   this.config = {
     sources: [
-      {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"), type: "video/mp4"},
-      {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"), type: "video/webm"},
-      {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"), type: "video/ogg"}
+      {
+        src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"),
+        type: "video/mp4"
+      },
+      {
+        src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"),
+        type: "video/webm"
+      },
+      {
+        src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"), type: "video/ogg"}
     ],
     tracks: [
       {
@@ -199,27 +199,27 @@ angular.module('starter.controllers', [])
     $scope.videos = [
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/videogular.mp4"), type: "video/mp4"}
+          {src: $sce.trustAsResourceUrl("./video/video1.mp4"), type: "video/mp4"}
         ]
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/big_buck_bunny_720p_h264.mov"), type: "video/mp4"}
+          {src: $sce.trustAsResourceUrl("./video/video2.mp4"), type: "video/mp4"}
         ]
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/oceans.mp4"), type: "video/mp4"}
+          {src: $sce.trustAsResourceUrl("./video/video3.mp4"), type: "video/mp4"}
         ]
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/big_buck_bunny_720p_h264.mov"), type: "video/mp4"}
+          {src: $sce.trustAsResourceUrl("./video/video4.mp4"), type: "video/mp4"}
         ]
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("./video/oceans.mp4"), type: "video/mp4"}
+          {src: $sce.trustAsResourceUrl("./video/video5.mp4"), type: "video/mp4"}
         ]
       }
     ];
@@ -243,7 +243,7 @@ angular.module('starter.controllers', [])
       document.getElementById('playerVideo').children[0].setAttribute('webkit-playsinline', '');
     }
 
-    $scope.setState = function() {
+    $scope.setState = function(API) {
         $scope.currentTime = $scope.API.currentTime;
         $scope.totalTime = $scope.API.totalTime;
         var minutes = new Date($scope.totalTime).getMinutes();
