@@ -1,3 +1,10 @@
+video::-webkit-media-controls {
+    display:none !important;
+}
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+
 /*example1 stylesheet*/
 video {
   width: 100%;

@@ -8,7 +8,6 @@
 angular.module('starter', [
   'ionic',
   'starter.controllers',
-  'starter.services',
 
   "ngSanitize",
   "com.2fdevs.videogular",
@@ -43,45 +42,12 @@ angular.module('starter', [
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.example1', {
-    url: '/example1',
-    views: {
-      'tab-example1': {
-        templateUrl: 'templates/video-example1.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.example2', {
-      url: '/example2',
-      views: {
-        'tab-example2': {
-          templateUrl: 'templates/video-example2.html',
-          controller: 'ChatsCtrl'
-        }
-      }
+    .state('video', {
+      url: '/video',
+      templateUrl: 'templates/video.html'
     })
 
-  .state('tab.example3', {
-    url: '/example3',
-    views: {
-      'tab-example3': {
-        templateUrl: 'templates/video-example3.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
-
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/example1');
+  $urlRouterProvider.otherwise('/video');
 
 });

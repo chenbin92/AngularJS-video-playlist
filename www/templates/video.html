@@ -1,6 +1,6 @@
-<ion-view view-title="example3">
+<ion-view view-title="video player">
   <ion-content class="video-example3">
-    <div ng-controller="AccountCtrl as controller">
+    <div ng-controller="videoCtrl as controller">
       <div class="videogular-container">
         <videogular
           vg-player-ready="controller.onPlayerReady($API)"
@@ -11,6 +11,7 @@
           <!-- vg-media: 视频来源 -->
           <vg-media vg-src="controller.config.sources"
                     vg-tracks="controller.config.tracks"
+                    vg-native-controls="false"
                     id="playerVideo">
           </vg-media>
 
